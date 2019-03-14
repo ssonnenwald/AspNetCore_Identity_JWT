@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCore.Identity.Api</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetCore.Identity.Api.Controllers.AccountController">
+            <summary>
+            The account controller.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{AspNetCore.Identity.Data.Entities.ApplicationUser},Microsoft.AspNetCore.Identity.SignInManager{AspNetCore.Identity.Data.Entities.ApplicationUser},Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{AspNetCore.Identity.Api.Controllers.AccountController})">
+            <summary>
+            The constructor for the accountcontroller.
+            </summary>
+            <param name="userManager">Provides the APIs for managing users in a persistence store.</param>
+            <param name="signInManager">Provides the APIs for user sign in.</param>
+            <param name="configuration">Represents a set of key/value application configuration properties.</param>
+            <param name="logger">A generic interface for logging where the category name is derived from the specified TCategoryName type name.  Generally used to enable activation of a named ILogger from dependency injection.</param>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.CreateToken(AspNetCore.Identity.Api.Models.LoginModel)">
+            <summary>
+            Create a token for the user and return it.
+            </summary>
+            <param name="loginModel">The login model the user will post.</param>
+            <returns>Returns a token for the user.</returns>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.RefreshToken">
+            <summary>
+            Refresh the JWT Token for the user if it expired.
+            </summary>
+            <returns>Returns a new JWT Token for the user.</returns>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.Register(AspNetCore.Identity.Api.Models.RegisterModel)">
+            <summary>
+            Register a new user.
+            </summary>
+            <param name="registerModel">The register model the user will post.</param>
+            <returns>Returns a JWT Token for the user on successful registration or the errors if unable to register the user.</returns>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.GetToken(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Returns a JWT Toekn for the user.
+            </summary>
+            <param name="user">The identity user.</param>
+            <returns>Returns the serialized JWT Token as a string.</returns>
+        </member>
+        <member name="T:AspNetCore.Identity.Api.Mappings.AutoMapperConfiguration">
+            <summary>
+            Configuration for Automapper.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Mappings.AutoMapperConfiguration.OrganizationProfile">
+            <summary>
+            The organization profile.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Identity.Api.Mappings.ViewModelToDomainMappingProfile">
+            <summary>
+            Automapper mappings for the view model object to the domain object.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Mappings.ViewModelToDomainMappingProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Identity.Api.Models.LoginModel">
+            <summary>
+            The login model that a user will post.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.LoginModel.UserName">
+            <summary>
+            The user name.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.LoginModel.Password">
+            <summary>
+            The password for the user.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Identity.Api.Models.RegisterModel">
+            <summary>
+            The registration model for the user.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.RegisterModel.FirstName">
+            <summary>
+            The first name the user is going to register with.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.RegisterModel.LastName">
+            <summary>
+            The last name the user is going to register with.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.RegisterModel.Email">
+            <summary>
+            The email the user is going to register with.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Identity.Api.Models.RegisterModel.PasswordConfirmation">
+            <summary>
+            The password confirmation the user is going to register with.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Web.Api.Program">
+            <summary>
+            The main program class.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the web api.
+            </summary>
+            <param name="args">An array of arguments when starting the web api.</param>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            The web builder create method.
+            </summary>
+            <param name="args">An array of arguments when starting the web api.</param>
+            <returns>Returns the web builder.</returns>
+        </member>
+        <member name="T:AspNetCore.Web.Api.Startup">
+            <summary>
+            The startup class.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor for the startup.
+            </summary>
+            <param name="configuration">Represents a set of key/value application configuration properties.</param>
+        </member>
+        <member name="P:AspNetCore.Web.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime.  Use this method to add services to the container.
+            </summary>
+            <param name="services">Specifies a contract for a collection of service descriptors.</param>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime.  Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Provides the mechanisms to configure the application's request pipleline.</param>
+            <param name="env">Provides information about the web hosting environment the application is running in.</param>
+        </member>
+        <member name="T:AspNetCore.Web.Api.Startup.SchemaFilter">
+            <summary>
+            Filter for Swagger.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Web.Api.Startup.SchemaFilter.Apply(Swashbuckle.AspNetCore.Swagger.SwaggerDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Method to apply the filter entries.
+            </summary>
+            <param name="swaggerDoc"></param>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>
