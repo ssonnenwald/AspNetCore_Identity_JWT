@@ -18,12 +18,18 @@
             <param name="configuration">Represents a set of key/value application configuration properties.</param>
             <param name="logger">A generic interface for logging where the category name is derived from the specified TCategoryName type name.  Generally used to enable activation of a named ILogger from dependency injection.</param>
         </member>
-        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.CreateToken(AspNetCore.Identity.Api.Models.LoginModel)">
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.Login(AspNetCore.Identity.Api.Models.LoginModel)">
             <summary>
-            Create a token for the user and return it.
+            Login into the application.
             </summary>
             <param name="loginModel">The login model the user will post.</param>
             <returns>Returns a token for the user.</returns>
+        </member>
+        <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.SignOut">
+            <summary>
+            Signout of the application.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:AspNetCore.Identity.Api.Controllers.AccountController.RefreshToken">
             <summary>

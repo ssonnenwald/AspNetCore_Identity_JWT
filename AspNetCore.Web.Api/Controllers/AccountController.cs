@@ -50,7 +50,7 @@ namespace AspNetCore.Identity.Api.Controllers
         }
 
         /// <summary>
-        /// Login
+        /// Login into the application.
         /// </summary>
         /// <param name="loginModel">The login model the user will post.</param>
         /// <returns>Returns a token for the user.</returns>
@@ -94,16 +94,36 @@ namespace AspNetCore.Identity.Api.Controllers
         }
 
         /// <summary>
-        /// Signout
+        /// Signout of the application.
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         [ApiExplorerSettings(GroupName = "Identity")]
         [Route("signout")]
-        public async Task SignOut()
+        public async Task<IActionResult> SignOut()
         {
-            // Sign out
-            await _signInManager.SignOutAsync();
+            // Find and return a user, if any, who has the specified user name.
+            var user = await _userManager.FindByNameAsync(
+                User.Identity.Name ??
+                User.Claims.Where(c => c.Properties.ContainsKey("unique_name")).Select(c => c.Value).FirstOrDefault()
+                );
+
+            // Validate we found the user.
+            if (user != null)
+            {
+                // Sign out
+                await _signInManager.SignOutAsync();
+
+                // Log to the debug window.
+                _logger.LogInformation("User: {User} - successfully signed out.", user.UserName);
+
+                // Return an HTTP Status of 200.
+                return Ok();
+            }
+
+            // Return a bad request.
+            return BadRequest();
         }
 
         /// <summary>
@@ -145,7 +165,7 @@ namespace AspNetCore.Identity.Api.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser();
-                Mapper.Map<ApplicationUser, RegisterModel>(user, registerModel);
+                Mapper.Map<RegisterModel, ApplicationUser>(registerModel, user);
                 
                 // Creates the specified user in the backing store with given password.
                 var identityResult = await _userManager.CreateAsync(user, registerModel.Password);
