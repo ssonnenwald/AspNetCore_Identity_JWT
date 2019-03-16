@@ -1,5 +1,12 @@
 # ASP.NET Core Identity - JWT Authentication
 
+[![fork this repo](http://githubbadges.com/fork.svg?user=ssonnenwald&repo=AspNetCore_Identity_JWT&style=flat)](https://github.com/ssonnenwald/AspNetCore_Identity_JWT/fork)
+![activity per year repo](https://img.shields.io/github/commit-activity/m/ssonnenwald/AspNetCore_Identity_JWT.svg)
+![last commit](https://img.shields.io/github/last-commit/ssonnenwald/AspNetCore_Identity_JWT.svg)
+![license](https://img.shields.io/github/license/ssonnenwald/AspNetCore_Identity_JWT.svg)
+![GitHub issues](https://img.shields.io/github/issues/ssonnenwald/AspNetCore_Identity_JWT.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/ssonnenwald/AspNetCore_Identity_JWT.svg)
+
 ## General
 
 This is an implementation of using the ASP.NET Core Identity component to implement JWT Token authentication for a user signing into and out of a application.  There are two projects in this solution, the **AspNetCore.Identity.Data** and the **AspNetCore.Identity.Api**.
