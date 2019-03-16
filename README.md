@@ -3,7 +3,7 @@
 [![fork this repo](http://githubbadges.com/fork.svg?user=ssonnenwald&repo=AspNetCore_Identity_JWT&style=flat)](https://github.com/ssonnenwald/AspNetCore_Identity_JWT/fork)
 ![commit activity](https://img.shields.io/github/commit-activity/w/ssonnenwald/AspNetCore_Identity_JWT.svg)
 ![last commit](https://img.shields.io/github/last-commit/ssonnenwald/AspNetCore_Identity_JWT.svg)
-![Github](https://img.shields.io/github/license/ssonnenwald/AspNetCore_Identity_JWT.svg)
+![GitHub](https://img.shields.io/github/license/ssonnenwald/AspNetCore_Identity_JWT.svg)
 ![GitHub issues](https://img.shields.io/github/issues/ssonnenwald/AspNetCore_Identity_JWT.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/ssonnenwald/AspNetCore_Identity_JWT.svg)
 
