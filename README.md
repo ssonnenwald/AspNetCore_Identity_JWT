@@ -11,7 +11,7 @@ The **AspNetCore.Identity.Data** project uses migrations to create the database 
 - Visual Studio 2017
 - ASP.NET Core 2.2 SDK
 - Microsft SQL Server LocalDB
-- ASP.NET Core Entity Framework
+- Entity Framework Core
 
 ## Startup Project
 
